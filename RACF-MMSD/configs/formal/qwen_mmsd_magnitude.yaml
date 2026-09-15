@@ -1,6 +1,0 @@
-seed: 42
-method: magnitude
-dataset: {name: MMSD2.0, labels: [non-sarcastic, sarcastic]}
-model: {name: Qwen2-VL-7B-Instruct, backend: qwen, path: models/Qwen2-VL-7B-Instruct, revision: local_checkpoint}
-prompt: {version: beyond_v1, user_template: 'You are provided with an image from a tweet with the associated text: "{text}". Is the image-text pair sarcastic? Answer with exactly one label: non-sarcastic or sarcastic.'}
-training: {epochs: 2, batch_size: 8, gradient_accumulation: 2, checkpoint_interval: 500, learning_rate: 0.00004, weight_decay: 0.01, lambda_cf: 1.0, max_frames: 1, lora: {r: 16, alpha: 32, dropout: 0.05, target_modules: [q_proj, k_proj, v_proj, o_proj]}}
